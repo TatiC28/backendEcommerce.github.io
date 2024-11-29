@@ -1,29 +1,24 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootPath = path.join(__dirname, '../../');
+const rootPath = path.join(__dirname, '../');
 
-exports.getData = (folder) => {
-  try {
-    const folderPath = path.join(rootPath, folder);
-    console.log(`Leyendo archivos desde: ${folderPath}`); // Para depuración
-
-    const files = fs.readdirSync(folderPath); // Leer todos los archivos en la carpeta
-    const data = files
-      .filter(file => file.endsWith('.json')) // Asegúrate de procesar solo archivos JSON
-      .map(file => {
-        const filePath = path.join(folderPath, file);
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        return JSON.parse(fileContent); // Convierte el contenido a un objeto
-      });
-
-    console.log('Datos combinados:', data); // Para depuración
-    return data; // Devuelve todos los datos combinados en un array
-  } catch (err) {
-    console.error(`Error leyendo archivos en ${folder}:`, err);
-    return [];
-  }
+exports.getData = (folderName) => {
+    try {
+        // Cambia para buscar la carpeta en la raíz del proyecto
+        const dirPath = path.join(__dirname, `../../../${folderName}`);
+        if (!fs.existsSync(dirPath)) {
+            console.error(`La carpeta ${folderName} no existe: ${dirPath}`);
+            return [];
+        }
+        const files = fs.readdirSync(dirPath);
+        return files.map(file => JSON.parse(fs.readFileSync(path.join(dirPath, file), 'utf-8')));
+    } catch (error) {
+        console.error(`Error leyendo archivos en ${folderName}:`, error.message);
+        return [];
+    }
 };
+
 
 exports.saveData = (folder, id, data) => {
   try {
