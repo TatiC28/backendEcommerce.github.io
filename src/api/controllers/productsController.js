@@ -48,6 +48,30 @@ exports.getProductById = (req, res) => {
   }
 };
 
+exports.getProductsByCategory = (req, res) => {
+  const category = req.query.category; // Captura el parámetro `category`
+
+  if (!category) {
+      return res.status(400).json({ error: "Falta el parámetro de categoría" });
+  }
+
+  const filePath = path.join(__dirname, '../../products/products.json');
+  fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error("Error al leer el archivo de productos:", err);
+          return res.status(500).json({ error: "Error interno del servidor" });
+      }
+      try {
+          const products = JSON.parse(data);
+          const filteredProducts = products.filter(product => product.catID == category); // Filtrar por `catID`
+          res.json(filteredProducts);
+      } catch (parseError) {
+          console.error("Error al parsear el archivo JSON:", parseError);
+          res.status(500).json({ error: "Error interno del servidor" });
+      }
+  });
+};
+
 
 exports.createProduct = (req, res) => {
   const newProduct = { id: Date.now(), ...req.body };

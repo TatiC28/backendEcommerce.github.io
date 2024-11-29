@@ -19,6 +19,9 @@ const productsRoutes = require('./routes/products');
 const categoriesRoutes = require('./routes/categories');
 const productsCommentsRoutes = require('./routes/productsComments');
 
+
+
+
 app.use('/products', productsRoutes);
 app.use('/categories', categoriesRoutes); // Registra las rutas de categorías
 app.use('/products_comments', productsCommentsRoutes);

@@ -1,9 +1,10 @@
+// categoriesController.js
 const path = require('path');
 const fs = require('fs');
 
-// Función para obtener las categorías
-exports.getCategories = (req, res) => {
-    const filePath = path.join(__dirname, '../../cats/cat.json'); // Ajusta la ruta a la raíz del proyecto
+exports.getAllCategories = (req, res) => {
+    const filePath = path.resolve('src/cats/cat.json');
+
     console.log("Intentando leer archivo:", filePath);
 
     fs.readFile(filePath, 'utf8', (err, data) => {
@@ -12,7 +13,7 @@ exports.getCategories = (req, res) => {
             return res.status(500).json({ error: "Error interno del servidor" });
         }
         try {
-            const categories = JSON.parse(data); // Parsear el archivo JSON
+            const categories = JSON.parse(data);
             res.json(categories);
         } catch (parseError) {
             console.error("Error al parsear el archivo JSON:", parseError);
