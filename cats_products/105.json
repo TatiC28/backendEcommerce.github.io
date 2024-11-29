@@ -9,7 +9,7 @@
             "cost": 2599,
             "currency": "USD",
             "soldCount": 11,
-            "image": "http://localhost:3000/img/prod40281_1.jpg"
+            "image": "img/prod40281_1.jpg"
         }
     ]
 }

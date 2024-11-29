@@ -12,7 +12,7 @@ exports.getAllProducts = (req, res) => {
   // Agregar la URL completa a las imágenes
   const updatedProducts = filteredProducts.map(product => ({
       ...product,
-      images: product.images.map(image => `http://localhost:3000/${image}`)
+      images: product.images.map(image => `https://backend-ecommerce-github-lzvwt1hkj-tatianas-projects-bbbdd6b7.vercel.app/${image}`)
   }));
 
   res.json(updatedProducts); // Responder con los productos filtrados
