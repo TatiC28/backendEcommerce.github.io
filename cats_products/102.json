@@ -9,7 +9,7 @@
             "cost": 2400,
             "currency": "UYU",
             "soldCount": 97,
-            "image": "img/prod50741_1.jpg"
+            "image": "http://localhost:3000/img/prod50741_1.jpg"
         },
         {
             "id": 50742,
@@ -18,7 +18,7 @@
             "cost": 2999,
             "currency": "UYU",
             "soldCount": 11,
-            "image": "img/prod50742_1.jpg"
+            "image": "http://localhost:3000/img/prod50742_1.jpg"
         },
         {
             "id": 50743,
@@ -27,7 +27,7 @@
             "cost": 59999,
             "currency": "UYU",
             "soldCount": 16,
-            "image": "img/prod50743_1.jpg"
+            "image": "http://localhost:3000/img/prod50743_1.jpg"
         },
         {
             "id": 50744,
@@ -36,7 +36,7 @@
             "cost": 10999,
             "currency": "UYU",
             "soldCount": 8,
-            "image": "img/prod50744_1.jpg"
+            "image": "http://localhost:3000/img/prod50744_1.jpg"
         }
     ]
 }
