@@ -10,7 +10,7 @@ app.use('/img', express.static(path.join(__dirname, '../img'))); // Asegúrate d
 // Habilitar CORS
 app.use(cors());
 
-// Otros middlewares
+
 app.use(express.json());
 
 // Rutas
