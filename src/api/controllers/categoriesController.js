@@ -3,7 +3,8 @@ const path = require('path');
 const fs = require('fs');
 
 exports.getAllCategories = (req, res) => {
-    const filePath = path.resolve('src/cats/cat.json');
+    const filePath = path.join(__dirname, '../../../cats/cat.json');
+  
 
     console.log("Intentando leer archivo:", filePath);
 
