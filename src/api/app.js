@@ -4,8 +4,9 @@ const cors = require('cors'); // Importa cors
 
 const app = express();
 
-// Servir la carpeta img como estática
-app.use('/img', express.static(path.join(__dirname, '../img'))); // Asegúrate de que el path sea correcto
+
+// Servir archivos estáticos desde la carpeta 'img' en la raíz del proyecto
+app.use('/img', express.static(path.join(__dirname, 'img')));
 
 // Habilitar CORS
 app.use(cors());
