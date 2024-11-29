@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Ruta absoluta a la carpeta products_comments
-const COMMENTS_DIR = path.join(__dirname, '../../products_comments');
+const COMMENTS_DIR = path.join(__dirname, '../../../products_comments');
 
 exports.getProductComments = (req, res) => {
     const productId = req.params.id; // Obtener el ID del producto desde los parámetros
