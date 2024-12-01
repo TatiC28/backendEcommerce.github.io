@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors'); // Importa cors
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); 
 const app = express();
 
 
@@ -58,7 +58,4 @@ app.post('/login', (req, res) => {
     } else {
         res.status(401).json({ message: 'Credenciales inválidas' });
     }
-});
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
