@@ -45,10 +45,10 @@ app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
     // Verificar credenciales
-    if (username === USER.username && password === USER.password) {
+    if (username !== "" && password !== "") {
         // Crear token
         const token = jwt.sign(
-            { username: USER.username },
+            { username: username },
             JWT_SECRET,
             { expiresIn: TOKEN_EXPIRATION }
         );
