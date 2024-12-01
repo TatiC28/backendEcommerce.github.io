@@ -11,20 +11,19 @@ app.use('/img', express.static(path.join(__dirname, 'img')));
 // Habilitar CORS
 app.use(cors());
 
-
 app.use(express.json());
 
 // Rutas
 const productsRoutes = require('./routes/products');
 const categoriesRoutes = require('./routes/categories');
 const productsCommentsRoutes = require('./routes/productsComments');
-
-
+const cartsRoutes = require('./routes/carts');
 
 
 app.use('/products', productsRoutes);
 app.use('/categories', categoriesRoutes); // Registra las rutas de categorías
 app.use('/products_comments', productsCommentsRoutes);
+app.use('/cart', cartsRoutes);
 
 
 
