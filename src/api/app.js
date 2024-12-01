@@ -3,6 +3,8 @@ const path = require('path');
 const cors = require('cors'); // Importa cors
 const jwt = require('jsonwebtoken'); 
 const app = express();
+const authMiddleware = require('./middlewares/authMiddleware'); // Importa el middleware
+
 
 
 // Servir archivos estáticos desde la carpeta 'img' en la raíz del proyecto
