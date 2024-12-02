@@ -28,23 +28,12 @@ app.use('/products_comments', productsCommentsRoutes);
 app.use('/cart', cartsRoutes);
 
 
-
 // Servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-
-
-// Importar dependencias necesarias
-const express = require('express');
-const jwt = require('jsonwebtoken');
-const cors = require('cors');
-
-// Middleware para parsear JSON y habilitar CORS
-app.use(express.json());
-app.use(cors());
 
 // Clave secreta para JWT (en producción usar variable de entorno)
 const JWT_SECRET = 'claveSecretaParaEstudiantes123';
